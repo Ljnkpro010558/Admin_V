@@ -69,7 +69,7 @@ export default class Login extends Component{
           };
         return (
             <>
-            <div className="container">
+            <div className="container" style={{backgroundColor:"linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33))"}}>
                 <div className="card card-container">
                
                 <img id="profile-img" className="profile-img-card" alt="account" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />

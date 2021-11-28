@@ -139,3 +139,127 @@
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
+
+.title-comm {
+	color: whitesmoke;
+	font-size:18px;
+	position:relative;
+	margin-top:30px;
+	margin-bottom:30px;
+	font-weight:700;
+	background-color: whitesmoke;
+	text-align:center;
+}
+h3.title-comm:before {
+	content:'';
+	position:absolute;
+	top:50%;
+	left:0;
+	right:0;
+	margin-top:0;
+	border-top:2px solid #d0d2d3;
+	z-index:1;
+	display:block;
+}
+.title-comm .title-holder {
+	min-width:350px;
+	height:45px;
+	background-color:#56bbe7;
+	height:auto;
+	line-height:45px;
+	padding:0px 20px;
+	position:relative;
+	z-index:2;
+	text-align:center;
+	display:inline-block;
+	min-width:280px;
+}
+.title-comm .title-holder {
+	min-width:350px;
+	height:45px;
+	background-color:#56bbe7;
+	height:auto;
+	line-height:45px;
+	padding:0px 20px;
+	position:relative;
+	z-index:2;
+	text-align:center;
+	display:inline-block;
+	min-width:280px;
+}
+.title-holder:before {
+	content:"";
+	position:absolute;
+	right:-15px;
+	border-width:0px;
+	bottom:0px;
+	border-style:solid;
+	border-color:#5c9efe transparent;
+	display:block;
+	width:0;
+	height:0;
+	border-top:23px solid transparent;
+	border-bottom:22px solid transparent;
+	border-left:15px solid #56bbe7;
+}
+.title-holder:after {
+	content:"";
+	position:absolute;
+	left:-15px;
+	border-width:0px;
+	bottom:0px;
+	border-style:solid;
+	border-color:#5c9efe transparent;
+	display:block;
+	width:0;
+	height:0;
+	border-top:23px solid transparent;
+	border-bottom:22px solid transparent;
+	border-right: 15px solid #56bbe7;
+}
+
+div#nz-div {
+	border-bottom:2px solid #56bbe7;
+	margin-bottom:40px;
+	display:block;
+}
+#nz-div h3.tde {
+	margin:0;
+	font-size:16px;
+	line-height:20px;
+	display:inline-block;
+	text-transform:uppercase;
+}
+#nz-div h3.tde:after {
+	content:"";
+	width:0;
+	height:0;
+	border-top:40px solid transparent;
+	border-left:20px solid #56bbe7;
+	border-bottom:0px solid transparent;
+	border-right:0 solid transparent;
+	position:absolute;
+	top:0px;
+	right:-20px;
+}
+#nz-div h3.tde span {
+	background:#56bbe7;
+	padding:10px 20px 8px 20px;
+	color:white;
+	position:relative;
+	display:inline-block;
+	margin:0;
+}
+.sub-cat {
+	display:inline-block;
+	margin:0;
+	line-height:45px;
+	margin-left:100px;
+	float:right;
+}
+
+
+.font-name{
+    font-family: "Roboto", sans-serif
+}
+
