@@ -42,14 +42,14 @@ export default class Login extends Component{
               alert("Không được bỏ trống!!!");
             } else {
               const bodyParameters = {
-                email: this.state.Username,
-                password: this.state.Password
+                'email': this.state.Username,
+                'password': this.state.Password
               };
               var APILogin = GetAPILogin();
                 axios
                 .post(APILogin, bodyParameters )
                 .then((response) => {
-                  if (response.data.message === "success") {
+                  if (response.data.signin == "done") {
                     alert("Đăng nhập thành công");
                     setUserSession(this.state.Username);
                     this.setState({

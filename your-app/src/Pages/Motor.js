@@ -14,44 +14,49 @@ export default class Mortor extends React.Component{
     constructor() {
         super();
         this.state = {
-            Mortor: {
-                id: 'A',
-                TagName:'B',
-                TagModel:'C',
-                TagOn: true,
-                TagState: true,
-                Conn: true,
-                error: false,
 
-            }
+                id: '',
+                TagName: '',
+                TagModel: '',
+                TagOn: null,
+                TagState: null ,
+                Conn: null,
+                error: null,
+
+            
         }
     }
 
-        componentDidMount() {
-            setInterval(function(){ 
-               
-                var API = GetAPILMortor();
+    async componentDidMount() {
+        try {
+            var API = GetAPILMortor();
+            setInterval(async () => {
+              
                 axios
-                .get(API )
+                .get(API)
                 .then((response) => {
-                 
-                    this.setState({
-                        id: response.data.id,
-                        TagName: response.data.tagName,
-                        TagModel: response.data.tagModel,
-                        TagOn: response.data.tagOn,
-                        TagState: response.data.tagState,
-                        Connected: response.data.Conn,
-                        error: response.data.error
+                    console.log(response.data.result.connected + "adasdasd");
+                    this.setState({                      
+                        id: response.data.result.id,
+                        TagName: response.data.result.tagName,
+                        TagModel: response.data.result.tagModel,
+                        TagOn: response.data.result.tagOn,
+                        TagState: response.data.result.tagState,
+                        Connected: response.data.result.connected,
+                        error: response.data.result.error
+                        
                       });
-                    
-                 
+                      console.log(this.state.Connected + "ttds");
+
                   
                 })
                 .catch((error) => {
                   console.log(error);
                 });   
-            }, 3000);
+            }, 5000);
+        } catch (error) {
+            console.log(error)
+          }
         }
 
     render(){
@@ -60,16 +65,16 @@ export default class Mortor extends React.Component{
     var ICON;
     var ICON2;
     var ICON3;
-     if(this.state.Mortor.TagState === true) { Tag = "ON "; ICON = TRUE}
+     if(this.state.TagState === true) { Tag = "ON "; ICON = TRUE}
      else {Tag = "OFF "; ICON = FALSE}
 
      var Conn;
-     if(this.state.Mortor.Conn === true) { Conn = "Connected ";ICON2 = TRUE}
+     if(this.state.Connected === true) { Conn = "Connected ";ICON2 = TRUE}
      else {Conn = "Not Connect ";ICON2 = FALSE}
 
 
      var err;
-     if(this.state.Mortor.error === true) { err = "Is Error ";ICON3 = FALSE}
+     if(this.state.error === true) { err = "Is Error ";ICON3 = FALSE}
      else {err = "Not Error ";ICON3 = TRUE}
 
         return (
@@ -82,7 +87,7 @@ export default class Mortor extends React.Component{
             
                     <div class="image"> <img src={DC} class="rounded" width="155" /> </div>
                     <div class="ml-3 w-100">
-                        <h4 class="mb-0 mt-0">ID: {this.state.Mortor.id}</h4> <span>Tên thiết bị: {this.state.Mortor.TagName}</span> <br/> <span>Tên loại thiết bị: {this.state.Mortor.TagModel}</span>
+                        <h4 class="mb-0 mt-0">ID: {this.state.id}</h4> <span>Tên thiết bị: {this.state.TagName}</span> <br/> <span>Tên loại thiết bị: {this.state.TagModel}</span>
                         <div class="p-2 mt-2 bg-primary d-flex justify-content-around rounded text-white stats">
                             <div class="d-flex flex-column"> <span class="articles">Status: </span> <span class="number1" style={{fontWeight: 'bold'}}>{Tag}  
                             <img

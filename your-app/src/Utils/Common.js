@@ -13,13 +13,13 @@
     sessionStorage.setItem("accessToken", accessToken);
   };
 
-  const APILogin = "http://restapi.adequateshop.com/api/authaccount/login";
+  const APILogin = "http://192.168.1.8:3000/users/sign-in";
 
   export const GetAPILogin = () => {
     return APILogin;
   };
 
-  const APIMortor = "";
+  const APIMortor = 'http://192.168.1.8:3000/motors/61947c548a45f18778ccd8c9';
  
   export const GetAPILMortor = () => {
     return APIMortor;
