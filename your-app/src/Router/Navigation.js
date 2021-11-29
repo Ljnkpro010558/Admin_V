@@ -1,7 +1,8 @@
 import React from "react";
 import Login from "../Pages/Login.js";
 import Home from "../Pages/Home.js";
-import Info from "../Pages/Info.js"
+import Info from "../Pages/Info.js";
+import Mortor from "../Pages/Motor.js"
 import { Routes , Route } from "react-router-dom";
 
 import { getToken } from "../Utils/Common.js";
@@ -25,6 +26,15 @@ function NavigationURL(props) {
         element={(() => {
           
           if (getToken() != null) return <Info />
+          return <Login />
+        })()}
+      />
+
+        <Route
+        path="/Thiet-bi/Motor"
+        element={(() => {
+          
+          if (getToken() != null) return <Mortor />
           return <Login />
         })()}
       />

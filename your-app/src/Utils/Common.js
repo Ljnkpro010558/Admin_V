@@ -18,4 +18,12 @@
   export const GetAPILogin = () => {
     return APILogin;
   };
+
+  const APIMortor = "";
+ 
+  export const GetAPILMortor = () => {
+    return APIMortor;
+  };
+
+ 
   

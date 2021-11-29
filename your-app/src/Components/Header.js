@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate  } from "react-router-dom";
 import { getToken, removeUserSession } from "../Utils/Common";
-
+import img from "../asset/OPC-UA-Enabled.png";
 
 
 
@@ -17,7 +17,7 @@ function Header(props) {
   const displayCheck = () => {
     if (loggedIn) {
       return (
-        <div className="ml-auto"> 
+        <div className="ml-auto" > 
           <ul className="navbar-nav">
             <li className="nav-item dropdown">
               <a
@@ -26,6 +26,7 @@ function Header(props) {
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
+                style={{color: 'white'}}
               >
                 Admin
               </a>
@@ -64,12 +65,18 @@ function Header(props) {
   };
   return (
     <div>
-      <header className="fixed-top" style={{backgroundColor: '#212529'}}>
+      <header className="fixed-top" style={{backgroundColor: 'rgb(48, 175, 154)', borderBottom: "3px solid rgb(48, 175, 154)"}}>
         <nav className="navbar navbar-expand-lg navbar-dark p-0">
           <div className="container p-0">
             <div className="col-lg-2 p-0 d-flex">
               <Link className="navbar-brand" to="/Home">
-                Admin
+              <img
+                  src={img}
+                  className="img-fluid mr-3"
+                  style={{height:30,width: 30}}
+                  alt="Logo"
+                />
+                Admin OPC
               </Link>
               <button
                 className="navbar-toggler hidden-lg-up ml-auto"
@@ -96,6 +103,7 @@ function Header(props) {
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
+                    style={{color: 'white'}}
                   >
                     Thiết bị
                   </div>
@@ -107,7 +115,7 @@ function Header(props) {
                   </div>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Info">
+                  <Link className="nav-link" to="/Info" style={{color: 'white'}}>
                     Liên hệ
                   </Link>
                 </li>
